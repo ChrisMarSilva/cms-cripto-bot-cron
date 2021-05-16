@@ -74,7 +74,7 @@ def gerar_msg_alerta_cripto() -> str:
     # msg = msg.replace('<br>', '\n')
     return msg
 
-sched = BlockingScheduler(timezone=pytz)
+sched = BlockingScheduler(timezone=timezone)
 
 @sched.scheduled_job('interval', minutes=1)
 def processar():
@@ -106,7 +106,7 @@ sched.start()
 # pip freeze > requirements.txt
 # pip install -r requirements.txt
 
-# heroku ps:scale clock=1
+# heroku ps:scale clock=1 --app=cms-cripto-bot
 
 # pip install --upgrade pip
 # pip install --upgrade setuptools
