@@ -74,6 +74,9 @@ def gerar_msg_alerta_cripto() -> str:
     # msg = msg.replace('<br>', '\n')
     return msg
 
+sched = BlockingScheduler(timezone=pytz)
+
+@sched.scheduled_job('interval', minutes=1)
 def processar():
     try:
 
@@ -89,19 +92,16 @@ def processar():
     except Exception as e:
         print(f'Falha Geral: {str(e)}')
 
+sched.start()
 
-if (__name__ == '__main__'):
-    try:
-
-        processar()
-
-        # sched = BlockingScheduler(timezone=pytz)
-        # sched.add_job(func=processar, trigger='interval', minutes=1)  # 10
-        # sched.start()
-
-    except Exception as e:
-        print(f'Falha Geral: {str(e)}')
-
+# if (__name__ == '__main__'):
+#     try:
+#         processar()
+#         # sched = BlockingScheduler(timezone=pytz)
+#         # sched.add_job(func=processar, trigger='interval', minutes=1)  # 10
+#         # sched.start()
+#     except Exception as e:
+#         print(f'Falha Geral: {str(e)}')
 
 # pip freeze > requirements.txt
 # pip install -r requirements.txt
