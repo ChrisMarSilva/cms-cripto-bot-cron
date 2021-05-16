@@ -93,11 +93,11 @@ def processar():
 if (__name__ == '__main__'):
     try:
 
-        # processar()
+        processar()
 
-        sched = BlockingScheduler(timezone=pytz)
-        sched.add_job(func=processar, trigger='interval', minutes=10)
-        sched.start()
+        # sched = BlockingScheduler(timezone=pytz)
+        # sched.add_job(func=processar, trigger='interval', minutes=1)  # 10
+        # sched.start()
 
     except Exception as e:
         print(f'Falha Geral: {str(e)}')
