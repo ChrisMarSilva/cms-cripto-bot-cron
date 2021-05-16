@@ -106,6 +106,8 @@ sched.start()
 # pip freeze > requirements.txt
 # pip install -r requirements.txt
 
+# heroku ps:scale clock=1
+
 # pip install --upgrade pip
 # pip install --upgrade setuptools
 # pip install pytz
