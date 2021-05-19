@@ -263,7 +263,7 @@ def enviar_msg_alerta_cripto(chat_text: str ) -> str:
 
 sched = BlockingScheduler(timezone=timezone)
 
-@sched.scheduled_job('interval', minutes=30)
+@sched.scheduled_job('interval', minutes=60)
 def processar():
     try:
         html = buscar_trades()
