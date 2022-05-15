@@ -13,13 +13,11 @@ import warnings
 warnings.filterwarnings('ignore')
 
 import cryptocompare
-cryptocompare_api_key = '00ff6c8217eec5d6894a77d4bc335d5306072e0e22fc1af970bf0f68f00eb6bf'
-#cryptocompare.cryptocompare._set_api_key_parameter(api_key=cryptocompare_api_key)
+cryptocompare_api_key = '<crypto-compareapi-key>'
 
 import telebot
-telegram_chat_id = '452513294'  # CMS  - '452513294'   # Mae - '1031430125'
-telegram_token = '1238835452:AAGTATI9bldZfHtD2iMrvHiVztz9DguLHck'  # TamoNaBolsa
-telegram_token = '1853621782:AAEv8V-r8engZScvTQLolfMKOmeJ0DXv5dU'  # CMSCriptoBot
+telegram_chat_id = '<telegram-chat-id>'
+telegram_token = '<telegram-token>'
 
 def decimal_to_str(valor: float = 0.0, formato: str = "{0:,.2f}") -> str:
     try:
